@@ -4,7 +4,7 @@ const Show = () => {
     return (
         <div>
             
-            SHOW!
+            SHOW Page
         </div>
     );
 };

@@ -1,9 +1,14 @@
 import React from 'react';
+import Snacks from '../components/Snacks'
+
+
 
 const Index = () => {
+
     return (
-        <div>
-            <div> Index</div>
+        <div className="Index">
+    
+           <Snacks /> 
            
         </div>
     );

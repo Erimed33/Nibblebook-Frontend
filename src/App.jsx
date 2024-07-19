@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom"
 
 import NavBar from "./pages/NavBar"
 import Home from "./pages/Home"
-import Index from "./pages/New"
+import Index from "./pages/Index"
 import Show from "./pages/Show"
 import New from "./pages/New"
 import Edit from "./pages/Edit"

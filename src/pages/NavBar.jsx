@@ -4,7 +4,9 @@ import React from 'react';
 const NavBar = () => {
     return (
         <div>
-            <h1>NavBar showing success! whoo hoo!</h1>
+            <h1 className="title">Nibblebook</h1>
+            <h3>Unique Snacks Around the World</h3>
+            <div> </div>
            
         
         </div>

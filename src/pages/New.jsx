@@ -3,7 +3,7 @@ import React from 'react';
 const NewComment = () => {
     return (
         <div>
-            New Snacks Forms
+            New Snacks Forms Page
         </div>
     );
 };
