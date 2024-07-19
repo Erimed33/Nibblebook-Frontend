@@ -1,11 +1,13 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom"
-import NavBar from "./components/NavBar"
-import Home from "./components/Home"
-import Index from "./components/New"
-import Show from "./components/Show"
-import New from "./components/New"
-import Edit from "./components/Edit"
+
+
+import NavBar from "./pages/NavBar"
+import Home from "./pages/Home"
+import Index from "./pages/New"
+import Show from "./pages/Show"
+import New from "./pages/New"
+import Edit from "./pages/Edit"
 
 import './App.css'
 
