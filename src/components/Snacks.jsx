@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Snack from "./Snack";
+import { useParams } from "react-router-dom";
 
 const API = import.meta.env.VITE_API_URL;
 // console.log(API)
@@ -9,15 +10,13 @@ function Snacks() {
 
   useEffect(() => {
     fetch(`${API}/snacks`)
-    .then(res => res.json())
-    .then(res =>  {
-      console.log(res)
-      setsnacks(res)
-    }
-      
-    )
-    .catch(err => console.log(err))
-  }, [])
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        setsnacks(res);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className="Snacks">
@@ -25,18 +24,18 @@ function Snacks() {
         <table>
           <thead>
             <tr>
-                <th>Snacks Index Page</th>
-                <th>Is it Vegetarian?</th>
-                <th>See this Snack</th>
-                <th>Rating</th>
+              <th>Snacks Index Page</th>
+              <th>Is it Vegetarian?</th>
+              <th>See this Snack</th>
+              <th>Rating</th>
             </tr>
           </thead>
           <tbody>
-            {snacks.map((snack, id) => {
-              return <Snack key={snack.id} snack={snack} index={id} />;
+            {snacks.map((snack, index) => {
+              console.log("this is snack", snack, "this is index", index);
+              return <Snack key={snack.id} snack={snack} index={index} />;
             })}
           </tbody>
-          
         </table>
       </section>
     </div>
@@ -44,4 +43,3 @@ function Snacks() {
 }
 
 export default Snacks;
-    
