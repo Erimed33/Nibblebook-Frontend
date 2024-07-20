@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import React from "react";
-import Snacks from "./Snacks";
+
 
 const Snack = ({ snack, index }) => {
   return (

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Snack from "./Snack";
-import { useParams } from "react-router-dom";
+
 
 const API = import.meta.env.VITE_API_URL;
 // console.log(API)

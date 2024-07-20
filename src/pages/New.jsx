@@ -1,9 +1,12 @@
 import React from 'react';
+import AddNewSnackForm from '../components/addNewSnack'
 
 const NewComment = () => {
+
     return (
         <div>
-            New Snacks Forms Page
+           <h2>Add a New Snack </h2> 
+           <AddNewSnackForm  />
         </div>
     );
 };
