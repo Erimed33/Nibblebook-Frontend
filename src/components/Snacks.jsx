@@ -25,9 +25,9 @@ function Snacks() {
           <thead>
             <tr>
               <th>Snacks Index Page</th>
-              <th>Is it Vegetarian?</th>
-              <th>See this Snack</th>
-              <th>Rating</th>
+    
+            
+            
             </tr>
           </thead>
           <tbody>
