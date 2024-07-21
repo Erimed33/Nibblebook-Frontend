@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
+import '../styles/snackDetails.css'
+
 
 const API = import.meta.env.VITE_API_URL;
 const SnackDetails = () => {
@@ -17,14 +19,14 @@ const SnackDetails = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div>
-      <h2><strong>Name: </strong>{snacks.name}</h2>
-      <p><strong>Origin: </strong>{snacks.description}</p>
-      <p><strong>Description:</strong>{snacks.description}</p>
-      <p><strong>Rating:</strong>{snacks.rating}</p>
-      <p><strong>Vegetarian: </strong>{snacks.is_vegetarian ? "Yes" : "No"}</p>
-      <p><strong>Discovered Date: </strong>{snacks.discovered_date}</p>
-      <p><strong>Comments: </strong>{snacks.comments}</p>
+    <div className="snack-details">
+      <h2 ><strong className="label">{snacks.name}</strong></h2>
+      <p><strong className="label">Origin: </strong>{snacks.description}</p>
+      <p><strong className="label">Description: </strong>{snacks.description}</p>
+      <p><strong className="label">Rating: </strong>{snacks.rating}</p>
+      <p><strong className="label">Vegetarian: </strong>{snacks.is_vegetarian ? "Yes" : "No"}</p>
+      <p><strong className="label">Discovered Date: </strong>{snacks.discovered_date}</p>
+      <p><strong className="label">Comments: </strong>{snacks.comments}</p>
     </div>
   );
 };
