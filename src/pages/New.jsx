@@ -1,14 +1,11 @@
-import React from 'react';
-import AddNewSnackForm from '../components/addNewSnack'
-
+import React from "react";
+import NewSnack from "../components/NewSnack";
 const NewComment = () => {
-
-    return (
-        <div>
-           <h2>Add a New Snack </h2> 
-           <AddNewSnackForm  />
-        </div>
-    );
+  return (
+    <div>
+      <NewSnack />
+    </div>
+  );
 };
 
 export default NewComment;
