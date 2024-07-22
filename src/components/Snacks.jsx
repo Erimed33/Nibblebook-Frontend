@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
 import Snack from "./Snack";
 
-
 const API = import.meta.env.VITE_API_URL;
 // console.log(API)
 
 function Snacks() {
-  const [snacks, setsnacks] = useState([]);
+  const [snacks, setSnacks] = useState([]);
 
   useEffect(() => {
     fetch(`${API}/snacks`)
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        setsnacks(res);
+        setSnacks(res);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -25,9 +24,6 @@ function Snacks() {
           <thead>
             <tr>
               <th>Snacks Index Page</th>
-    
-            
-            
             </tr>
           </thead>
           <tbody>

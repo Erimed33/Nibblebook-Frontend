@@ -16,7 +16,7 @@ const NewSnack = () => {
   });
 
   const addSnack = () => {
-    fetch(`${API}/snacks/new`, {
+    fetch(`${API}/snacks`, {
       method: "POST",
       body: JSON.stringify(snack),
       headers: {
