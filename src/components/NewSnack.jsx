@@ -131,6 +131,7 @@ const NewSnack = () => {
             <label htmlFor="rating5">⭐️⭐️⭐️⭐️⭐️</label>
           </div>
         </fieldset>
+        <div className="checkbox-container">
         <label htmlFor="is_vegetarian">Vegetarian?:</label>
         <input
           id="is_vegetarian"
@@ -139,6 +140,7 @@ const NewSnack = () => {
           onChange={handleCheckbox}
           className="checkbox"
         />
+        </div>
         <label htmlFor="discovered_date" className="form-label">Discovered On:</label>
         <input
           id="discovered_date"
