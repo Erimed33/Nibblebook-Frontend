@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import '../styles/snackform.css'
+import "../styles/snackform.css";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -51,7 +51,9 @@ const NewSnack = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="snack-form">
-        <label htmlFor="name" className="form-label">Name:</label>
+        <label htmlFor="name" className="form-label">
+          Name:
+        </label>
         <input
           id="name"
           value={snack.name}
@@ -61,7 +63,9 @@ const NewSnack = () => {
           required
           className="form-input"
         />
-        <label htmlFor="origin" className="form-label">Origin:</label>
+        <label htmlFor="origin" className="form-label">
+          Origin:
+        </label>
         <input
           id="origin"
           value={snack.origin}
@@ -71,7 +75,9 @@ const NewSnack = () => {
           className="form-input"
           // name ori desc rate is_veg disc_date
         />
-        <label htmlFor="description" className="form-label">Description:</label>
+        <label htmlFor="description" className="form-label">
+          Description:
+        </label>
         <input
           id="description"
           value={snack.description}
@@ -81,10 +87,12 @@ const NewSnack = () => {
           required
           className="form-input"
         />
-        <label htmlFor="rating" className="form-label" >Rating:</label>
+        <label htmlFor="rating" className="form-label">
+          Rating:
+        </label>
         <fieldset>
           <legend>Rate this snack! :</legend>
-          <div >
+          <div>
             <input
               type="radio"
               id="rating1"
@@ -132,24 +140,26 @@ const NewSnack = () => {
           </div>
         </fieldset>
         <div className="checkbox-container">
-        <label htmlFor="is_vegetarian">Vegetarian?:</label>
-        <input
-          id="is_vegetarian"
-          value={snack.is_vegetarian}
-          type="checkbox"
-          onChange={handleCheckbox}
-          className="checkbox"
-        />
+          <label htmlFor="is_vegetarian">Vegetarian?:</label>
+          <input
+            id="is_vegetarian"
+            value={snack.is_vegetarian}
+            type="checkbox"
+            onChange={handleCheckbox}
+            className="checkbox"
+          />
         </div>
-        <label htmlFor="discovered_date" className="form-label">Discovered On:</label>
+        <label htmlFor="discovered_date" className="form-label">
+          Discovered On:
+        </label>
         <input
           id="discovered_date"
           value={snack.discovered_date}
           type="date"
           onChange={handleTextChange}
           className="discovered-field"
-      />    
-        <button type="submit" onClick={addSnack} className="form-button">
+        />
+        <button type="submit" className="form-button">
           Submit
         </button>
       </form>
