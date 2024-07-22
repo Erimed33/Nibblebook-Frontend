@@ -40,9 +40,9 @@ const NewSnack = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="snack-form">
+        <label htmlFor="name" className="form-label">Name:</label>
         <input
           id="name"
           value={snack.name}
@@ -50,17 +50,19 @@ const NewSnack = () => {
           onChange={handleTextChange}
           placeholder="Name of Snack"
           required
+          className="form-input"
         />
-        <label htmlFor="origin">Origin:</label>
+        <label htmlFor="origin" className="form-label">Origin:</label>
         <input
           id="origin"
           value={snack.origin}
           type="text"
           onChange={handleTextChange}
           placeholder="origin of Snack"
+          className="form-input"
           // name ori desc rate is_veg disc_date
         />
-        <label htmlFor="description">Description:</label>
+        <label htmlFor="description" className="form-label">Description:</label>
         <input
           id="description"
           value={snack.description}
@@ -68,15 +70,17 @@ const NewSnack = () => {
           onChange={handleTextChange}
           placeholder="description of Snack"
           required
+          className="form-input"
         />
-        <label htmlFor="rating">Rating:</label>
+        <label htmlFor="rating" className="form-label">Rating:</label>
         <input
           id="rating"
           value={snack.rating}
           type="dropdown"
           onChange={handleTextChange}
+          className="form-input"
         />
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name" className="form-label">Name:</label>
         <input
           id="name"
           value={snack.name}
@@ -84,8 +88,9 @@ const NewSnack = () => {
           onChange={handleTextChange}
           placeholder="Name of Snack"
           required
+          className="form-input"
         />
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name" className="form-label">Name:</label>
         <input
           id="name"
           value={snack.name}
@@ -93,6 +98,7 @@ const NewSnack = () => {
           onChange={handleTextChange}
           placeholder="Name of Snack"
           required
+          className="form-input"
         />
       </form>
     </div>
