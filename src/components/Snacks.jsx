@@ -7,14 +7,14 @@ const API = import.meta.env.VITE_API_URL;
 // console.log(API)
 
 function Snacks() {
-  const [snacks, setsnacks] = useState([]);
+  const [snacks, setSnacks] = useState([]);
 
   useEffect(() => {
     fetch(`${API}/snacks`)
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        setsnacks(res);
+        setSnacks(res);
       })
       .catch((err) => console.log(err));
   }, []);
