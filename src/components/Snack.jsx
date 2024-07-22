@@ -8,7 +8,10 @@ const Snack = ({ snack, index }) => {
       <td>
         <Link to={`/snacks/${snack.id}`}>
           {" "}
-          Name: {snack.name}, Rating: {snack.rating}, Origin: {snack.origin},
+          <div className='snack-label'><strong>Name:</strong> {snack.name}</div>
+          <div className='snack-label'><strong>Rating:</strong>{snack.rating}</div> 
+          <div className='snack-label'><strong>Origin:</strong> {snack.origin}</div>
+          
           Discovered Date: {snack.discovered_date}
         </Link>
       </td>
