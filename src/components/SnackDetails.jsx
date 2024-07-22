@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../styles/snackDetails.css";
 
 const API = import.meta.env.VITE_API_URL;
 const SnackDetails = () => {
   const [snacks, setSnacks] = useState([]);
   let { index } = useParams();
+  const nav = useNavigate();
 
   const deleteSnack = () => {
     fetch(`${API}/snacks/${snacks.id}`, {
