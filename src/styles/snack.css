@@ -1,0 +1,21 @@
+.snack-row td {
+    padding: 0.5rem;
+
+}
+
+.snack-label {
+    color: #044304;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+}
+
+.snack-row a {
+    color: #00ff00;
+    text-decoration: none;
+    display: block;
+}
+
+.snack-row a:visited {
+    color: #228b22;
+}

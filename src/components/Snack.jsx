@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../styles/snack.css'
 
 import React from "react";
 
