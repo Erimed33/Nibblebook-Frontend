@@ -9,6 +9,10 @@ const SnackDetails = () => {
   let { index } = useParams();
   const nav = useNavigate();
 
+  const handleEdit = () => {
+    nav(`/snacks/edit/${index}`);
+  };
+
   const deleteSnack = () => {
     fetch(`${API}/snacks/${snacks.id}`, {
       method: "DELETE",
@@ -29,6 +33,31 @@ const SnackDetails = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  //   const date = new Date(isoString);
+
+  // // Convert to a human-readable string
+  // const humanReadableDate = date.toLocaleString('en-US', {
+  //   year: 'numeric',
+  //   month: 'long',
+  //   day: 'numeric',
+  //   hour: 'numeric',
+  //   minute: 'numeric',
+  //   second: 'numeric',
+  //   hour12: true
+  // });
+
+  const date = new Date(snacks.discovered_date);
+
+  const humanReadable = date.toLocaleDateString("en-US", {
+    month: "numeric",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  snacks.discovered_date = humanReadable;
+
+  console.log("THIS IS THE SNACK", snacks.discovered_date);
   return (
     <div className="snack-details">
       <h2>
@@ -55,6 +84,7 @@ const SnackDetails = () => {
         {snacks.discovered_date}
       </p>
       <span>
+
         <button onClick={deleteSnack} className='post-put-button'>Delete Snack</button>
         <button className='post-put-button'>Edit Snack</button>
       </span>

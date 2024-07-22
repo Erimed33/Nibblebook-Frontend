@@ -4,16 +4,26 @@ import '../styles/snack.css'
 import React from "react";
 
 const Snack = ({ snack, index }) => {
+  const convertDate = () => {
+    let newDate = snack.discovered_date.split("");
+    newDate.splice(10);
+    return newDate;
+  };
+
   return (
     <tr className="snack-row">
       <td>
         <Link to={`/snacks/${snack.id}`}>
           {" "}
+
+          
+
           <div className='snack-label'><strong>Name:</strong> {snack.name}</div>
           <div className='snack-label'><strong>Rating:</strong>{snack.rating}</div> 
           <div className='snack-label'><strong>Origin:</strong> {snack.origin}</div>
           
           <div className='snack-label'><strong>Discovered Date:</strong> {snack.discovered_date}</div>
+
         </Link>
       </td>
     </tr>
