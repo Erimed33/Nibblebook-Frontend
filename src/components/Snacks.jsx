@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Snack from "./Snack";
-import '../styles/snackstyles.css'
-
+import "../styles/snackstyles.css";
 
 const API = import.meta.env.VITE_API_URL;
 // console.log(API)
@@ -26,7 +25,6 @@ function Snacks() {
           <thead>
             <tr>
               <th>Snacks Index Page</th>
-    
             </tr>
           </thead>
           <tbody>

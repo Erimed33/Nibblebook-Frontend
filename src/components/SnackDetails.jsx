@@ -5,9 +5,12 @@ import "../styles/snackDetails.css";
 
 const API = import.meta.env.VITE_API_URL;
 const SnackDetails = () => {
-  const [snacks, setSnacks] = useState([]);
+  const [snacks, setSnacks] = useState({});
+  const [formattedDate, setFormattedDate] = useState(null);
   let { index } = useParams();
   const nav = useNavigate();
+
+  console.log(snacks.discovered_date);
 
   const handleEdit = () => {
     nav(`/snacks/edit/${index}`);
@@ -24,40 +27,26 @@ const SnackDetails = () => {
       .catch((err) => console.log(err));
   };
 
+  const formatDate = () => {
+    const d = new Date(snacks.discovered_date);
+    const month = `0${d.getMonth() + 1}`.slice(-2);
+    const day = `0${d.getDate()}`.slice(-2);
+    const year = d.getFullYear();
+    console.log(`${year}-${month}-${day}`);
+    return `${year}-${month}-${day}`;
+  };
+
   useEffect(() => {
     fetch(`${API}/snacks/${index}`)
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
         setSnacks(res);
+        setFormattedDate(formatDate());
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [formattedDate]);
 
-  //   const date = new Date(isoString);
-
-  // // Convert to a human-readable string
-  // const humanReadableDate = date.toLocaleString('en-US', {
-  //   year: 'numeric',
-  //   month: 'long',
-  //   day: 'numeric',
-  //   hour: 'numeric',
-  //   minute: 'numeric',
-  //   second: 'numeric',
-  //   hour12: true
-  // });
-
-  const date = new Date(snacks.discovered_date);
-
-  const humanReadable = date.toLocaleDateString("en-US", {
-    month: "numeric",
-    day: "numeric",
-    year: "numeric",
-  });
-
-  snacks.discovered_date = humanReadable;
-
-  console.log("THIS IS THE SNACK", snacks.discovered_date);
   return (
     <div className="snack-details">
       <h2>
@@ -81,12 +70,15 @@ const SnackDetails = () => {
       </p>
       <p>
         <strong className="label">Discovered Date: </strong>
-        {snacks.discovered_date}
+        {formattedDate}
       </p>
       <span>
-
-        <button onClick={deleteSnack} className='post-put-button'>Delete Snack</button>
-        <button className='post-put-button'>Edit Snack</button>
+        <button onClick={deleteSnack} className="post-put-button">
+          Delete Snack
+        </button>
+        <button className="post-put-button" onClick={handleEdit}>
+          Edit Snack
+        </button>
       </span>
       <p>
         <strong className="label">Comments: </strong>

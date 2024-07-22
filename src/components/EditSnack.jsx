@@ -7,6 +7,7 @@ const API = import.meta.env.VITE_API_URL;
 
 const EditSnack = () => {
   const { index } = useParams();
+  const nav = useNavigate();
 
   const [snack, setSnack] = useState({
     name: "",
@@ -33,7 +34,7 @@ const EditSnack = () => {
   };
 
   const handleTextChange = (event) => {
-    setSnack({ ...snack, [event.target.index]: event.target.value });
+    setSnack({ ...snack, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = (event) => {
@@ -74,7 +75,7 @@ const EditSnack = () => {
           Name:
         </label>
         <input
-          index="name"
+          name="name"
           value={snack.name}
           type="text"
           onChange={handleTextChange}
@@ -86,7 +87,7 @@ const EditSnack = () => {
           Origin:
         </label>
         <input
-          index="origin"
+          name="origin"
           value={snack.origin}
           type="text"
           onChange={handleTextChange}
@@ -98,7 +99,7 @@ const EditSnack = () => {
           Description:
         </label>
         <input
-          index="description"
+          name="description"
           value={snack.description}
           type="text"
           onChange={handleTextChange}
@@ -114,7 +115,7 @@ const EditSnack = () => {
           <div>
             <input
               type="radio"
-              index="rating1"
+              name="rating1"
               name="rating"
               value="1"
               onClick={handleRadio}
@@ -123,7 +124,7 @@ const EditSnack = () => {
 
             <input
               type="radio"
-              index="rating2"
+              name="rating2"
               name="rating"
               value="2"
               onClick={handleRadio}
@@ -132,7 +133,7 @@ const EditSnack = () => {
 
             <input
               type="radio"
-              index="rating3"
+              name="rating3"
               name="rating"
               value="3"
               onClick={handleRadio}
@@ -141,7 +142,7 @@ const EditSnack = () => {
 
             <input
               type="radio"
-              index="rating4"
+              name="rating4"
               name="rating"
               value="4"
               onClick={handleRadio}
@@ -150,7 +151,7 @@ const EditSnack = () => {
 
             <input
               type="radio"
-              index="rating5"
+              name="rating5"
               name="rating"
               value="5"
               onClick={handleRadio}
@@ -161,7 +162,7 @@ const EditSnack = () => {
         <div className="checkbox-container">
           <label htmlFor="is_vegetarian">Vegetarian?:</label>
           <input
-            index="is_vegetarian"
+            name="is_vegetarian"
             value={snack.is_vegetarian}
             type="checkbox"
             onChange={handleCheckbox}
@@ -172,7 +173,7 @@ const EditSnack = () => {
           Discovered On:
         </label>
         <input
-          index="discovered_date"
+          name="discovered_date"
           value={formatDate()}
           type="date"
           onChange={handleTextChange}
