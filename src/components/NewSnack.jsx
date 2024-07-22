@@ -11,12 +11,12 @@ const NewSnack = () => {
     origin: "",
     description: "",
     rating: 0,
-    is_vegetarian: "",
+    is_vegetarian: false,
     discovered_date: "",
   });
 
   const addSnack = () => {
-    fetch(`${API}/colors`, {
+    fetch(`${API}/snacks/new`, {
       method: "POST",
       body: JSON.stringify(snack),
       headers: {
@@ -37,6 +37,14 @@ const NewSnack = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     addSnack();
+  };
+
+  const handleCheckbox = () => {
+    setSnack({ ...snack, is_vegetarian: !snack.is_vegetarian });
+  };
+
+  const handleRadio = (event) => {
+    setSnack({ ...snack, rating: event.target.value });
   };
 
   return (
@@ -70,30 +78,72 @@ const NewSnack = () => {
           required
         />
         <label htmlFor="rating">Rating:</label>
+        <fieldset>
+          <legend>Rate this snack! :</legend>
+          <div>
+            <input
+              type="radio"
+              id="rating1"
+              name="rating"
+              value="1"
+              onClick={handleRadio}
+            />
+            <label htmlFor="rating1">⭐️</label>
+
+            <input
+              type="radio"
+              id="rating2"
+              name="rating"
+              value="2"
+              onClick={handleRadio}
+            />
+            <label htmlFor="rating2">⭐️⭐️</label>
+
+            <input
+              type="radio"
+              id="rating3"
+              name="rating"
+              value="3"
+              onClick={handleRadio}
+            />
+            <label htmlFor="rating3">⭐️⭐️⭐️</label>
+
+            <input
+              type="radio"
+              id="rating4"
+              name="rating"
+              value="4"
+              onClick={handleRadio}
+            />
+            <label htmlFor="rating4">⭐️⭐️⭐️⭐️</label>
+
+            <input
+              type="radio"
+              id="rating5"
+              name="rating"
+              value="5"
+              onClick={handleRadio}
+            />
+            <label htmlFor="rating5">⭐️⭐️⭐️⭐️⭐️</label>
+          </div>
+        </fieldset>
+        <label htmlFor="is_vegetarian">Vegetarian?:</label>
         <input
-          id="rating"
-          value={snack.rating}
-          type="dropdown"
+          id="is_vegetarian"
+          value={snack.is_vegetarian}
+          type="checkbox"
+          onChange={handleCheckbox}
+        />
+        <label htmlFor="discovered_date">Discovered On:</label>
+        <input
+          id="discovered_date"
+          value={snack.discovered_date}
+          type="date"
           onChange={handleTextChange}
         />
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          value={snack.name}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Name of Snack"
-          required
-        />
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          value={snack.name}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Name of Snack"
-          required
-        />
+        <button type="submit" onClick={addSnack}>
+          Submit
+        </button>
       </form>
     </div>
   );
