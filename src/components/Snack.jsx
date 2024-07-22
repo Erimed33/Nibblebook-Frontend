@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../styles/snack.css'
 
 import React from "react";
 
@@ -14,8 +15,15 @@ const Snack = ({ snack, index }) => {
       <td>
         <Link to={`/snacks/${snack.id}`}>
           {" "}
-          Name: {snack.name}, Rating: {snack.rating}, Origin: {snack.origin},
-          Discovered Date: {convertDate()}
+
+          
+
+          <div className='snack-label'><strong>Name:</strong> {snack.name}</div>
+          <div className='snack-label'><strong>Rating:</strong>{snack.rating}</div> 
+          <div className='snack-label'><strong>Origin:</strong> {snack.origin}</div>
+          
+          <div className='snack-label'><strong>Discovered Date:</strong> {snack.discovered_date}</div>
+
         </Link>
       </td>
     </tr>
