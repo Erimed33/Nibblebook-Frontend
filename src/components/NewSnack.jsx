@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import '../styles/snackform.css'
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -58,7 +59,7 @@ const NewSnack = () => {
           value={snack.origin}
           type="text"
           onChange={handleTextChange}
-          placeholder="origin of Snack"
+          placeholder="Origin of Snack"
           className="form-input"
           // name ori desc rate is_veg disc_date
         />
@@ -80,23 +81,23 @@ const NewSnack = () => {
           onChange={handleTextChange}
           className="form-input"
         />
-        <label htmlFor="name" className="form-label">Name:</label>
+        <label htmlFor="discovered-date" className="form-label">Discovered Date:</label>
         <input
-          id="name"
-          value={snack.name}
+          id="discovered-date"
+          value={snack.discovered_date}
           type="text"
           onChange={handleTextChange}
-          placeholder="Name of Snack"
+          placeholder="Date discovered"
           required
           className="form-input"
         />
-        <label htmlFor="name" className="form-label">Name:</label>
+        <label htmlFor="comments" className="form-label">Comments:</label>
         <input
-          id="name"
-          value={snack.name}
+          id="Comments"
+          value={snack.comments}
           type="text"
           onChange={handleTextChange}
-          placeholder="Name of Snack"
+          placeholder="Comments"
           required
           className="form-input"
         />
