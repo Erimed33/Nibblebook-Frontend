@@ -1,0 +1,14 @@
+.snack-details {
+    background-color: green;
+    color: lightgreen;
+    margin: 20px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    box-shadow: 10px;
+}
+
+.snack-details .label {
+    color: #ffc0ff
+
+}
+

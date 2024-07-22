@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import '../styles/navbar.css'
+
 const NavBar = () => {
   const nav = useNavigate();
 
@@ -13,15 +15,15 @@ const NavBar = () => {
     nav("/snacks/new");
   };
   return (
-    <div>
-      <h1 className="title">Nibblebook</h1>
+    <div className="navbar">
+      <h1 className="title" onClick={handleHome}>Nibblebook</h1>
       <h3>Unique Snacks Around the World</h3>
-      <div>
-        <span>
-          <button onClick={handleHome}>Home</button>
-          <button onClick={handleSnacks}>Snacks</button>
-          <button onClick={handleAdd}>Add Snack!</button>
-        </span>{" "}
+      <div className="button-container">
+        
+          <button className='nav-button' onClick={handleHome}>Home</button>
+          <button className='nav-button' onClick={handleSnacks}>Snacks</button>
+          <button className='nav-button' onClick={handleAdd}>Add Snack!</button>
+       
       </div>
     </div>
   );
