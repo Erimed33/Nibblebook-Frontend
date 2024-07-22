@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Snack from "./Snack";
+import '../styles/snackstyles.css'
 
 
 const API = import.meta.env.VITE_API_URL;
@@ -19,15 +20,13 @@ function Snacks() {
   }, []);
 
   return (
-    <div className="Snacks">
-      <section>
-        <table>
+    <div className="snacks-container">
+      <section className="snacks-section">
+        <table className="snacks-table">
           <thead>
             <tr>
               <th>Snacks Index Page</th>
     
-            
-            
             </tr>
           </thead>
           <tbody>

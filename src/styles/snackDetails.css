@@ -1,5 +1,5 @@
 .snack-details {
-    background-color: green;
+    background-color: rgb(16, 84, 16);
     color: lightgreen;
     margin: 20px;
     border: 2px solid #ccc;
@@ -8,7 +8,7 @@
 }
 
 .snack-details .label {
-    color: #ffc0ff
+    color: #ceadce
 
 }
 

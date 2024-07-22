@@ -5,7 +5,7 @@ import React from "react";
 
 const Snack = ({ snack, index }) => {
   return (
-    <tr>
+    <tr className="snack-row">
       <td>
         <Link to={`/snacks/${index}`}>
           {" "}
