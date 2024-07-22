@@ -81,10 +81,10 @@ const NewSnack = () => {
           required
           className="form-input"
         />
-        <label htmlFor="rating">Rating:</label>
+        <label htmlFor="rating" className="form-label" >Rating:</label>
         <fieldset>
           <legend>Rate this snack! :</legend>
-          <div>
+          <div >
             <input
               type="radio"
               id="rating1"
@@ -137,15 +137,17 @@ const NewSnack = () => {
           value={snack.is_vegetarian}
           type="checkbox"
           onChange={handleCheckbox}
+          className="checkbox"
         />
-        <label htmlFor="discovered_date">Discovered On:</label>
+        <label htmlFor="discovered_date" className="form-label">Discovered On:</label>
         <input
           id="discovered_date"
           value={snack.discovered_date}
           type="date"
           onChange={handleTextChange}
+          className="discovered-field"
       />    
-        <button type="submit" onClick={addSnack}>
+        <button type="submit" onClick={addSnack} className="form-button">
           Submit
         </button>
       </form>
