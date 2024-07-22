@@ -32,7 +32,7 @@ const SnackDetails = () => {
   return (
     <div className="snack-details">
       <h2>
-        <strong className="label">{snacks.name}</strong>
+        <strong className="name-label">{snacks.name}</strong>
       </h2>
       <p>
         <strong className="label">Origin: </strong>
@@ -55,8 +55,8 @@ const SnackDetails = () => {
         {snacks.discovered_date}
       </p>
       <span>
-        <button onClick={deleteSnack}>Delete Snack</button>
-        <button>Edit Snack</button>
+        <button onClick={deleteSnack} className='post-put-button'>Delete Snack</button>
+        <button className='post-put-button'>Edit Snack</button>
       </span>
       <p>
         <strong className="label">Comments: </strong>

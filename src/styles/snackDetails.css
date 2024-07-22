@@ -1,10 +1,30 @@
 .snack-details {
-    background-color: rgb(18, 141, 18);
-    color: rgb(114, 236, 114);
+    background-color: rgb(25, 151, 25);
+    color: rgb(135, 239, 135);
     margin: 20px;
-    border: 2px solid #ccc;
+    border: 2px ;
     padding: 20px;
     box-shadow: 10px;
 }
+
+.name-label{
+    color: rgb(214, 176, 182);
+}
+
+.post-put-button {
+    background-color: #32cd32;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    align-self: center;
+    width: 40%;
+    margin-right: 10px;
+}
+
+
 
 
