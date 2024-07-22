@@ -12,7 +12,7 @@ const Snack = ({ snack, index }) => {
           <div className='snack-label'><strong>Rating:</strong>{snack.rating}</div> 
           <div className='snack-label'><strong>Origin:</strong> {snack.origin}</div>
           
-          Discovered Date: {snack.discovered_date}
+          <div className='snack-label'><strong>Discovered Date:</strong> {snack.discovered_date}</div>
         </Link>
       </td>
     </tr>
