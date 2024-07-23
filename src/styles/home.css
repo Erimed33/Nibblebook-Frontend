@@ -1,3 +1,25 @@
-.homepage {
-    background-color: green;
+.home-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .gallery-image {
+        max-width: 100%;
+    }
 }
