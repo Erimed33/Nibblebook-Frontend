@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import "../styles/snack.css";
-import { useState } from "react";
 import React from "react";
 
-const Snack = ({ snack, index }) => {
+const Snack = ({ snack, id }) => {
   //   const [formattedDate, setFormattedDate] = useState(null);
 
   const formatDate = () => {

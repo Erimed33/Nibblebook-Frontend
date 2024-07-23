@@ -141,7 +141,7 @@ const NewSnack = () => {
           </div>
         </fieldset>
         <div className="checkbox-container">
-          <label htmlFor="is_vegetarian">Vegetarian?:</label>
+          <label htmlFor="is_vegetarian" className="form-label">Vegetarian?:</label>
           <input
             name="is_vegetarian"
             value={snack.is_vegetarian}

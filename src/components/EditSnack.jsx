@@ -6,7 +6,7 @@ import "../styles/snackform.css";
 const API = import.meta.env.VITE_API_URL;
 
 const EditSnack = () => {
-  const { index } = useParams();
+  const { id } = useParams();
   const nav = useNavigate()
 
   const [snack, setSnack] = useState({
@@ -22,7 +22,7 @@ const EditSnack = () => {
   const [formattedDate, setFormattedDate] = useState('')
 
   const editSnack = () => {
-    fetch(`${API}/snacks/${index}`, {
+    fetch(`${API}/snacks/${id}`, {
       method: "PUT",
       body: JSON.stringify({...snack, discovered_date: formattedDate}),
       headers: {
@@ -31,7 +31,7 @@ const EditSnack = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        nav(`/snacks/${index}`);
+        nav(`/snacks/${id}`);
       })
       .catch((err) => console.log(err));
   };
@@ -58,7 +58,7 @@ const EditSnack = () => {
   };
 
   useEffect(() => {
-    fetch(`${API}/snacks/${index}`)
+    fetch(`${API}/snacks/${id}`)
       .then((res) => res.json())
       .then((res) => {
         // console.log(res);
@@ -66,7 +66,7 @@ const EditSnack = () => {
         setFormattedDate(formatDate(res.discovered_date));
       })
       .catch((err) => console.log(err));
-  }, [index]);
+  }, [id]);
 
   const formatDate = () => {
     const d = new Date(snack.date_discovered);
