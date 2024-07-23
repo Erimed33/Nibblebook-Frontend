@@ -8,11 +8,11 @@ import Show from "./pages/Show";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
 
-import "./App.css";
+import './App.css'
 
 function App() {
   return (
-    <>
+    <div className="app-container">
       <NavBar />
       <main>
         <Routes>
@@ -23,7 +23,7 @@ function App() {
           <Route path="/snacks/edit/:id" element={<Edit />} />
         </Routes>
       </main>
-    </>
+    </div>
   );
 }
 

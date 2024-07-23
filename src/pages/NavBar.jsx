@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/navbar.css'
 
+
 const NavBar = () => {
   const nav = useNavigate();
 
@@ -16,6 +17,7 @@ const NavBar = () => {
   };
   return (
     <div className="navbar">
+     
       <h1 className="title" onClick={handleHome}>Nibblebook</h1>
       <h3>Unique Snacks Around the World</h3>
       <div className="button-container">
