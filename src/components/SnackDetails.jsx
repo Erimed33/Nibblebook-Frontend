@@ -7,8 +7,20 @@ const API = import.meta.env.VITE_API_URL;
 const SnackDetails = () => {
   const [snacks, setSnacks] = useState({});
   const [formattedDate, setFormattedDate] = useState(null);
+  const [comments, setComments] = useState({ username: "", comment: "" });
+  const [totalComments, setTotalComments] = useState([]);
   let { index } = useParams();
   const nav = useNavigate();
+
+  const handleTextChange = (event) => {
+    setComments({ ...comments, [event.target.id]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setTotalComments([...totalComments, comments]);
+    setSnacks;
+  };
 
   console.log(snacks.discovered_date);
 
@@ -36,6 +48,14 @@ const SnackDetails = () => {
     return `${year}-${month}-${day}`;
   };
 
+  const fillComments = () => {
+    return totalComments.map((comment) => {
+      <p>
+        {comment.username} Says: {comment.comment}{" "}
+      </p>;
+    });
+  };
+
   useEffect(() => {
     fetch(`${API}/snacks/${index}`)
       .then((res) => res.json())
@@ -45,7 +65,7 @@ const SnackDetails = () => {
         setFormattedDate(formatDate());
       })
       .catch((err) => console.log(err));
-  }, [formattedDate]);
+  }, [formattedDate, totalComments]);
 
   return (
     <div className="snack-details">
@@ -80,9 +100,39 @@ const SnackDetails = () => {
           Edit Snack
         </button>
       </span>
+      <div className="form-container" onSubmit={handleSubmit}>
+        <form className="snack-form">
+          <label htmlFor="userName" className="form-label">
+            Username:
+          </label>
+          <input
+            id="username"
+            value={comments.username}
+            type="text"
+            onChange={handleTextChange}
+            placeholder="Username"
+            required
+            className="form-input"
+          />
+          <label htmlFor="origin" className="form-label">
+            Comment:
+          </label>
+          <input
+            id="comment"
+            value={comments.comment}
+            type="text"
+            onChange={handleTextChange}
+            placeholder="Your comment. (be nice!)"
+            className="form-input"
+          />
+          <button type="submit" className="post-put-button">
+            Submit
+          </button>
+        </form>
+      </div>
+
       <p>
         <strong className="label">Comments: </strong>
-        {snacks.comments}
       </p>
     </div>
   );

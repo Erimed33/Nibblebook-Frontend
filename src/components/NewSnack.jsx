@@ -83,7 +83,7 @@ const NewSnack = () => {
           value={snack.description}
           type="text"
           onChange={handleTextChange}
-          placeholder="description of Snack"
+          placeholder="Description of Snack"
           required
           className="form-input"
         />
