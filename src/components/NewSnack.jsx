@@ -14,6 +14,7 @@ const NewSnack = () => {
     rating: 0,
     is_vegetarian: false,
     discovered_date: "",
+    comments:"",
   });
 
   const addSnack = () => {
@@ -24,7 +25,7 @@ const NewSnack = () => {
         "Content-Type": "application/json",
       },
     })
-      .then((res) => res.json)
+      .then((res) => res.json())
       .then((res) => {
         nav("/snacks");
       })
@@ -32,7 +33,7 @@ const NewSnack = () => {
   };
 
   const handleTextChange = (event) => {
-    setSnack({ ...snack, [event.target.id]: event.target.value });
+    setSnack({ ...snack, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = (event) => {
@@ -55,7 +56,7 @@ const NewSnack = () => {
           Name:
         </label>
         <input
-          id="name"
+          name="name"
           value={snack.name}
           type="text"
           onChange={handleTextChange}
@@ -67,7 +68,7 @@ const NewSnack = () => {
           Origin:
         </label>
         <input
-          id="origin"
+          name="origin"
           value={snack.origin}
           type="text"
           onChange={handleTextChange}
@@ -79,7 +80,7 @@ const NewSnack = () => {
           Description:
         </label>
         <input
-          id="description"
+          name="description"
           value={snack.description}
           type="text"
           onChange={handleTextChange}
@@ -142,7 +143,7 @@ const NewSnack = () => {
         <div className="checkbox-container">
           <label htmlFor="is_vegetarian">Vegetarian?:</label>
           <input
-            id="is_vegetarian"
+            name="is_vegetarian"
             value={snack.is_vegetarian}
             type="checkbox"
             onChange={handleCheckbox}
@@ -153,12 +154,24 @@ const NewSnack = () => {
           Discovered On:
         </label>
         <input
-          id="discovered_date"
+          name="discovered_date"
           value={snack.discovered_date}
           type="date"
           onChange={handleTextChange}
           className="discovered-field"
         />
+       
+        <label htmlFor="comments" className="form-label">
+      Comments:
+        </label>
+        <textarea
+        name="comments"
+        id="comments"
+        value={snack.comments}
+        onChange={handleTextChange}
+        placeholder="Enter comments about this snack here"
+        className="form-input"/>
+        
         <button type="submit" className="form-button">
           Submit
         </button>

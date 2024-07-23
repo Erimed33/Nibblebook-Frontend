@@ -16,6 +16,7 @@ const EditSnack = () => {
     rating: 0,
     is_vegetarian: false,
     discovered_date: "",
+    comments:"",
   });
 
   const [formattedDate, setFormattedDate] = useState('')
@@ -162,7 +163,7 @@ const EditSnack = () => {
           </div>
         </fieldset>
         <div className="checkbox-container">
-          <label htmlFor="is_vegetarian">Vegetarian?:</label>
+          <label htmlFor="is_vegetarian" className="form-label">Vegetarian?:</label>
           <input
             name="is_vegetarian"
             value={snack.is_vegetarian}
@@ -180,6 +181,14 @@ const EditSnack = () => {
           type="date"
           onChange={handleDateChange}
           className="discovered-field"
+        />
+        <label htmlFor="comments" className="form-label">Comments: </label>
+         <input
+          name="comments"
+          value={snack.comments}
+          type="text"
+          onChange={handleTextChange}
+          className="form-input"
         />
         <button type="submit" className="form-button">
           Submit
