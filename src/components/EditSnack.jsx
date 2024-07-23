@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate, Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../styles/snackform.css";
 
 const API = import.meta.env.VITE_API_URL;
 
 const EditSnack = () => {
   const { index } = useParams();
+  const nav = useNavigate()
 
   const [snack, setSnack] = useState({
     name: "",
@@ -60,7 +61,7 @@ const EditSnack = () => {
   }, []);
 
   const formatDate = () => {
-    const d = new Date(snack.discovered_date);
+    const d = new Date(snacks.date_discovered);
     const month = `0${d.getMonth() + 1}`.slice(-2);
     const day = `0${d.getDate()}`.slice(-2);
     const year = d.getFullYear();
